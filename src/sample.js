@@ -53,7 +53,7 @@ const One = (props) => {
   };
 
   const validate = () => {
-    if (!info1.name) setError("Name is mandatory field");
+    if (!info1.name) setError("ยังไม่ได้ป้อนข้อมูลโครงการ");
     else {
       setError("");
       props.nextStep();
@@ -95,7 +95,7 @@ const Two = (props) => {
   };
 
   const validate2 = () => {
-    if (!info2.age) setError("Age is mandatory field");
+    if (!info2.age) setError("ยังไม่ได้ป้อนจำนวนแปลงที่ดิน");
     else {
       setError("");
       props.nextStep();
