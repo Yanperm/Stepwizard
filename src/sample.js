@@ -64,7 +64,7 @@ const One = (props) => {
   return (
     <div>
       <span style={{ color: "red" }}>{error}</span>
-      <h1>กรุณาป้อนข้อมูลของท่าน</h1>
+      <h1 class="text-3xl font-bold underline">กรุณาป้อนข้อมูลของท่าน</h1>
       <FormGroup>
         <Label>ชื่อโครงการ: </Label>
         <Input
@@ -72,6 +72,7 @@ const One = (props) => {
           name="name"
           placeholder="ชื่อโครงการสำหรับจัดแฟ้ม"
           onChange={onInputChanged}
+          class="input input-bordered"
         />
       </FormGroup>
       <br />
