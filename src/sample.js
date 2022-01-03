@@ -22,15 +22,15 @@ const ActionButtons = (props) => {
       <Row>
         {props.currentStep > 1 && (
           <Col>
-            <Button onClick={handleBack}>Back</Button>
+            <Button onClick={handleBack}>กลับ</Button>
           </Col>
         )}
         <Col>
           {props.currentStep < props.totalSteps && (
-            <Button onClick={handleNext}>Next</Button>
+            <Button onClick={handleNext}>ถัดไป</Button>
           )}
           {props.currentStep === props.totalSteps && (
-            <Button onClick={handleFinish}>Finish</Button>
+            <Button onClick={handleFinish}>เสร็จสิ้น</Button>
           )}
         </Col>
       </Row>
@@ -64,13 +64,13 @@ const One = (props) => {
   return (
     <div>
       <span style={{ color: "red" }}>{error}</span>
-      <h1>This is step 1 content</h1>
+      <h1>กรุณาป้อนข้อมูลของท่าน</h1>
       <FormGroup>
-        <Label>Name: </Label>
+        <Label>ชื่อโครงการ: </Label>
         <Input
           type="text"
           name="name"
-          placeholder="Enter your name"
+          placeholder="ชื่อโครงการสำหรับจัดแฟ้ม"
           onChange={onInputChanged}
         />
       </FormGroup>
@@ -106,18 +106,18 @@ const Two = (props) => {
   return (
     <div>
       <span style={{ color: "red" }}>{error}</span>
-      <h1>This is step 2 content</h1>
+      <h1>จำนวนแปลงที่ดิน</h1>
       <FormGroup>
         <Label>
-          Welcome <b>{props.user.name || ""}</b>
+          ยินดีต้อนรับโครงการ <b>{props.user.name || ""}</b>
         </Label>
       </FormGroup>
       <FormGroup>
-        <Label>Age: </Label>
+        <Label>แปลงที่ดิน: </Label>
         <Input
           type="text"
           name="age"
-          placeholder="Enter your age"
+          placeholder="จำนวนแปลงที่ดิน"
           onChange={onInputChanged}
         />
       </FormGroup>
@@ -138,9 +138,9 @@ const Three = (props) => {
 
   return (
     <div>
-      <h2>Summary user detail</h2>
-      <p>Name: {props.user.name}</p>
-      <p>Age: {props.user.age}</p>
+      <h2>รายละเอียดโครงการ</h2>
+      <p>ชื่อโครงการ: {props.user.name}</p>
+      <p>แปลงที่ดินสำหรับจัดสรร: {props.user.age}</p>
       <br />
       <ActionButtons {...props} lastStep={handleLastStep} />
     </div>
@@ -172,15 +172,19 @@ const Sample = () => {
   };
 
   const handleComplete = () => {
-    alert("You r done. TQ");
+    alert("ข้อมูลที่คุณต้องการสร้างแฟ้มจัดสรรสำเร็จแล้ว");
   };
 
   return (
     <div>
       <Stepper activeStep={activeStep}>
-        <Step label="Step 1" children={<MdDescription />} />
-        <Step label="Personal Detail" />
-        <Step label="Confirmation" />
+        <Step label="สมัครสมาชิก" children={<MdDescription />} />
+        <Step label="ข้อมูลโครงการ" />
+        <Step label="ขอใบรับรองหน่วยงานต่างๆ" />
+        <Step label="จัดแฟ้ม" />
+        <Step label="ตรวจสาธารณูปโภค" />
+        <Step label="ขอพ้นหน้าที่บำรุงรักษา" />
+        <Step label="จัดตั้งนิติบุคคล" />
       </Stepper>
       {/* NOTE: IMPORTANT !! StepWizard must contains at least 2 children components, else got error */}
       <StepWizard instance={assignStepWizard} onStepChange={handleStepChange}>
