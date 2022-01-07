@@ -74,6 +74,25 @@ const One = (props) => {
           onChange={onInputChanged}
           class="input input-bordered"
         />
+
+        <br/>
+        <Label>ชื่อเจ้าของโครงการ บริษัท/บุคคล: </Label>
+        <Input
+          type="text"
+          name="staff"
+          placeholder="ชื่อเจ้าของโครงการ บริษัท/บุคคล"
+          onChange={onInputChanged}
+          class="input input-bordered"
+        />
+        <br/>
+        <Label>ที่อยู่: </Label>
+        <Input
+          type="text"
+          name="address"
+          placeholder="ที่อยู่"
+          onChange={onInputChanged}
+          class="input input-bordered"
+        />
       </FormGroup>
       <br />
       <ActionButtons {...props} nextStep={validate} />
